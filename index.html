@@ -231,7 +231,7 @@ document.getElementById('reviewForm').addEventListener('submit', function(e) {
   var name = this.name.value;
   var review = this.review.value;
 
-  fetch("https://script.google.com/macros/s/AKfycbzOf5XD7qZhLN0BWuXWwFXh1pNYDIaNP_w23Lhp0v6CbTjMhj_adiomQIMurG_HZCSz/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbxVx2RZpFR_hvcc3qguqfw0zkGmVa00eMW1DHySu3Pz627Hc2vONyeKjhcYZAuZmKs2/exec", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({name: name, review: review})
