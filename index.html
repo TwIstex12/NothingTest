@@ -216,40 +216,13 @@
       <h3>Nothing Phone 3 выводит опыт использования на новый уровень. Смартфон оснащён продвинутой системой камер с поддержкой съёмки в 8K и улучшенным ночным режимом, который делает фотографии яркими даже в полной темноте. Дисплей LTPO OLED с адаптивной частотой до 144 Гц обеспечивает невероятную плавность интерфейса и игр. Новый чипсет с искусственным интеллектом ускоряет работу и увеличивает время автономности. Поддержка сверхбыстрой зарядки 80 Вт и беспроводной зарядки делает Phone 3 одним из самых удобных смартфонов в своём классе.</h3>
       <img src="./img/Arbok-Primary-White.webp" alt="" style="border: 3px solid black; border-radius: 10px; width: 300px; height: 300px; object-fit: cover";>
         <h2>Оставьте отзыв</h2>
-  <form id="reviewForm">
-    <form action="https://script.google.com/macros/s/AKfycbyyA9J8btsIOr6DXbu1Etv_Tm002zsM0Thd5qFLKtQhXSK0EdNRH_KjW7sxTc67XDk/exec method="POST">
-    <input type="text" id="name" placeholder="Ваше имя" required>
-    <textarea id="message" placeholder="Ваш отзыв" required></textarea>
+
+  <form action="https://script.google.com/macros/s/AKfycbznoL2hawx5-5mf5qMmCqh7nZ59KUkyR3BS_WYQ9RnopeORqdz4p_jh43cV4-bPTbBQ/exec" method="POST">
+    <input type="text" name="name" placeholder="Ваше имя" required>
+    <textarea name="message" placeholder="Ваш отзыв" required></textarea>
     <button type="submit">Отправить</button>
   </form>
-
-  <script>
-    const BOT_TOKEN = "8440720431:AAFR65H8q8ScsnENEb7GUKjR8DfmJpaF5rM";
-    const CHAT_ID = "8440720431";
-
-    document.getElementById("reviewForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      let name = document.getElementById("name").value;
-      let message = document.getElementById("message").value;
-
-      let text = `✍️ Новый отзыв:\n👤 Имя: ${name}\n💬 Сообщение: ${message}`;
-
-      fetch(`https://api.telegram.org/bot8440720431:AAFR65H8q8ScsnENEb7GUKjR8DfmJpaF5rM/sendMessage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: 8440720431, text: text })
-      }).then(res => {
-        if (res.ok) {
-          alert("✅ Отзыв отправлен!");
-          document.getElementById("reviewForm").reset();
-        } else {
-          alert("❌ Ошибка отправки");
-        }
-      });
-    });
-  </script>
-
+  
     <script>
       const nav = document.getElementById('mainNav');
       const toggle = document.getElementById('navToggle');
