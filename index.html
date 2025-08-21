@@ -217,6 +217,8 @@
       <img src="./img/Arbok-Primary-White.webp" alt="" style="border: 3px solid black; border-radius: 10px; width: 300px; height: 300px; object-fit: cover";>
         <h2>Оставьте отзыв</h2>
 
+
+      
 <form id="reviewForm">
   <input type="text" name="name" placeholder="Ваше имя" required>
   <textarea name="review" placeholder="Ваш отзыв" required></textarea>
@@ -226,22 +228,22 @@
 <script>
 document.getElementById('reviewForm').addEventListener('submit', function(e) {
   e.preventDefault();
-
   var name = this.name.value;
   var review = this.review.value;
 
-  fetch('https://script.google.com/macros/s/AKfycbyX5TGvNACRMrIfuX60dENhXv1sobEF89weL63XTAhvWYGY_F5014HUgfK5PF9315zx/exec', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
+  fetch("https://script.google.com/macros/s/AKfycbzOf5XD7qZhLN0BWuXWwFXh1pNYDIaNP_w23Lhp0v6CbTjMhj_adiomQIMurG_HZCSz/exec", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
     body: JSON.stringify({name: name, review: review})
   })
-  .then(res => res.text())
-  .then(data => alert('Отзыв отправлен!'))
-  .catch(err => alert('Ошибка: ' + err));
+  .then(res => res.json())
+  .then(data => alert("Отправлено"))
+  .catch(err => alert("Ошибка"));
 });
 </script>
 
-  
+
+      
     <script>
       const nav = document.getElementById('mainNav');
       const toggle = document.getElementById('navToggle');
