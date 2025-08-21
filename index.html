@@ -219,28 +219,11 @@
 
 
       
-<form id="reviewForm">
-  <input type="text" name="name" placeholder="Ваше имя" required>
-  <textarea name="review" placeholder="Ваш отзыв" required></textarea>
+<form action="https://formspree.io/f/xzzvnzjy" method="POST">
+  <input type="email" name="email" placeholder="barnitop7@gmail.com" required>
+  <textarea name="message" placeholder="Сообщение" required></textarea>
   <button type="submit">Отправить</button>
 </form>
-
-<script>
-document.getElementById('reviewForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  var name = this.name.value;
-  var review = this.review.value;
-
-  fetch("https://script.google.com/macros/s/AKfycbxVx2RZpFR_hvcc3qguqfw0zkGmVa00eMW1DHySu3Pz627Hc2vONyeKjhcYZAuZmKs2/exec", {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({name: name, review: review})
-  })
-  .then(res => res.json())
-  .then(data => alert("Отправлено"))
-  .catch(err => alert("Ошибка"));
-});
-</script>
 
 
       
